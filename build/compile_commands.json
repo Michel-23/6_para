@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/s23380426@unn.global/6_para/build",
+  "command": "/usr/bin/g++-12    -fsanitize=address -g -o CMakeFiles/main.dir/main.cpp.o -c /home/s23380426@unn.global/6_para/main.cpp",
+  "file": "/home/s23380426@unn.global/6_para/main.cpp"
+},
+{
+  "directory": "/home/s23380426@unn.global/6_para/build",
+  "command": "/usr/bin/g++-12    -fsanitize=address -g -o CMakeFiles/main.dir/Vector.cpp.o -c /home/s23380426@unn.global/6_para/Vector.cpp",
+  "file": "/home/s23380426@unn.global/6_para/Vector.cpp"
+}
+]
