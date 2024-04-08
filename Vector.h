@@ -22,6 +22,10 @@ public:
         _norm = new double [_size];
     }
 
+    size_t Get_size(){
+        return _size;
+    }
+
     Vector (const Vector& tmp){ // конструктор копирования
         _size = tmp._size;
         _array = new T[_size];
@@ -102,7 +106,7 @@ public:
         delete [] _norm;
     }
 
-    Vector& operator=(const Vector& tmp){ /// !!!
+    Vector& operator=(const Vector& tmp){ // !!!
         if (tmp._size > _size){
             delete [] _array;
             _array = new T[tmp._size];
