@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/s23380426@unn.global/6_para/Matrix.cpp" "CMakeFiles/main.dir/Matrix.cpp.o" "gcc" "CMakeFiles/main.dir/Matrix.cpp.o.d"
-  "/home/s23380426@unn.global/6_para/Vector.cpp" "CMakeFiles/main.dir/Vector.cpp.o" "gcc" "CMakeFiles/main.dir/Vector.cpp.o.d"
-  "/home/s23380426@unn.global/6_para/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+  "C:/Users/PC/6_para/Matrix.cpp" "CMakeFiles/main.dir/Matrix.cpp.obj" "gcc" "CMakeFiles/main.dir/Matrix.cpp.obj.d"
+  "C:/Users/PC/6_para/Vector.cpp" "CMakeFiles/main.dir/Vector.cpp.obj" "gcc" "CMakeFiles/main.dir/Vector.cpp.obj.d"
+  "C:/Users/PC/6_para/main.cpp" "CMakeFiles/main.dir/main.cpp.obj" "gcc" "CMakeFiles/main.dir/main.cpp.obj.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

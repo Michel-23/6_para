@@ -1,16 +1,16 @@
 #include <iostream>
 #include "Matrix.h"
 
-// template <typename T>
-// Vector<T> hhh(const Vector<T> vec1, const Vector<T> vec2){
-//     Vector<T> vec8 = vec1 - vec2;
-//     return vec8;
-// }
-// template <typename G>
-// Vector<G> ttt(const Vector<G>& vec1, const Vector<G>& vec2){
-//     Vector<G> vec8 = vec1 - vec2;
-//     return vec8;
-// }
+/*template <typename T>
+Vector<T> hhh(const Vector<T> vec1, const Vector<T> vec2){
+    Vector<T> vec8 = vec1 - vec2;
+    return vec8;
+}
+template <typename G>
+Vector<G> ttt(const Vector<G>& vec1, const Vector<G>& vec2){
+    Vector<G> vec8 = vec1 - vec2;
+    return vec8;
+}*/
 
 
 int main(){
@@ -36,12 +36,15 @@ int main(){
     // Vector<double> rew = ttt(vec1, vec2);
     // std::cout << rew << std::endl;
 
-    size_t size;
-    std:: cin >> size;
+    /*size_t size;
+    std:: cin >> size;*/
 
-    Matrix<double> matr = Matrix<double>(size,size);
+    Matrix<double> matr = Matrix<double>(3,4);
+    //matr.Completion_matrix();
 
-    //std::cout << matr.matrixDet() << std::endl;
+    std::cout << matr << std::endl;
+
+    //std::cout << matr.determinant(size) << std::endl;
 
     return 0;
 }

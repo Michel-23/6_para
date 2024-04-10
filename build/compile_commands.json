@@ -1,17 +1,20 @@
 [
 {
-  "directory": "/home/s23380426@unn.global/6_para/build",
-  "command": "/usr/bin/g++-12    -fsanitize=address -g -o CMakeFiles/main.dir/main.cpp.o -c /home/s23380426@unn.global/6_para/main.cpp",
-  "file": "/home/s23380426@unn.global/6_para/main.cpp"
+  "directory": "C:/Users/PC/6_para/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\main.dir\\main.cpp.obj -c C:\\Users\\PC\\6_para\\main.cpp",
+  "file": "C:/Users/PC/6_para/main.cpp",
+  "output": "CMakeFiles/main.dir/main.cpp.obj"
 },
 {
-  "directory": "/home/s23380426@unn.global/6_para/build",
-  "command": "/usr/bin/g++-12    -fsanitize=address -g -o CMakeFiles/main.dir/Vector.cpp.o -c /home/s23380426@unn.global/6_para/Vector.cpp",
-  "file": "/home/s23380426@unn.global/6_para/Vector.cpp"
+  "directory": "C:/Users/PC/6_para/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\main.dir\\Vector.cpp.obj -c C:\\Users\\PC\\6_para\\Vector.cpp",
+  "file": "C:/Users/PC/6_para/Vector.cpp",
+  "output": "CMakeFiles/main.dir/Vector.cpp.obj"
 },
 {
-  "directory": "/home/s23380426@unn.global/6_para/build",
-  "command": "/usr/bin/g++-12    -fsanitize=address -g -o CMakeFiles/main.dir/Matrix.cpp.o -c /home/s23380426@unn.global/6_para/Matrix.cpp",
-  "file": "/home/s23380426@unn.global/6_para/Matrix.cpp"
+  "directory": "C:/Users/PC/6_para/build",
+  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\main.dir\\Matrix.cpp.obj -c C:\\Users\\PC\\6_para\\Matrix.cpp",
+  "file": "C:/Users/PC/6_para/Matrix.cpp",
+  "output": "CMakeFiles/main.dir/Matrix.cpp.obj"
 }
 ]
