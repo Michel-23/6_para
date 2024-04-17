@@ -39,12 +39,18 @@ int main(){
     /*size_t size;
     std:: cin >> size;*/
 
-    Matrix<double> matr = Matrix<double>(3,4);
-    //matr.Completion_matrix();
 
-    std::cout << matr << std::endl;
+    Vector<double> vec1 = {1,3,4,6};
+    
+    Matrix<double> matr = Matrix<double> (4, 4);
 
-    //std::cout << matr.determinant(size) << std::endl;
+    matr.RandomFill(matr);
+
+    std:: cout << matr << std:: endl;
+
+    std:: cout << "determinant: \n" << matr.Deter() << std:: endl;
+
+    std:: cout << matr.Tranposition() << std:: endl;
 
     return 0;
 }

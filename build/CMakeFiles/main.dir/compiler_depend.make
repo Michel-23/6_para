@@ -118,7 +118,21 @@ CMakeFiles/main.dir/main.cpp.obj: C:/Users/PC/6_para/main.cpp \
   C:/Users/PC/6_para/Matrix.h \
   C:/Users/PC/6_para/Vector.h \
   C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cmath \
-  C:/MinGW/include/math.h
+  C:/MinGW/include/math.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/random \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/limits \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/random.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/vector \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_construct.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_uninitialized.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_vector.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_bvector.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/vector.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/uniform_int_dist.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/opt_random.h \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/random.tcc \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/numeric \
+  C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_numeric.h
 
 
 C:/Users/PC/6_para/Matrix.cpp:
@@ -193,6 +207,8 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/stdarg.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/localefwd.h:
 
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/random.h:
+
 C:/MinGW/include/stdlib.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ptr_traits.h:
@@ -208,6 +224,8 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/exception:
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cctype:
 
 C:/MinGW/include/sys/stat.h:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_construct.h:
 
 C:/MinGW/include/io.h:
 
@@ -256,6 +274,8 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_iterator.h:
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/basic_ios.tcc:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/debug/debug.h:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_uninitialized.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/stdint.h:
 
@@ -327,6 +347,8 @@ C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/streambuf_iterator.h:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/ctype_inline.h:
 
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/vector.tcc:
+
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/locale_facets.tcc:
 
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/ostream.tcc:
@@ -340,3 +362,23 @@ C:/Users/PC/6_para/Vector.h:
 C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/cmath:
 
 C:/MinGW/include/math.h:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/random:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/limits:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/vector:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_vector.h:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_bvector.h:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/uniform_int_dist.h:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/mingw32/bits/opt_random.h:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/random.tcc:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/numeric:
+
+C:/MinGW/lib/gcc/mingw32/6.3.0/include/c++/bits/stl_numeric.h:
