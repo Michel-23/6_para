@@ -67,8 +67,8 @@ public:
         Matrix A = Matrix(_size, tmp._vectors[0].Get_size());
 
         for (int i = 0; i < _size; i++) {
-            for (int j = 0; j < _vectors[0].Get_size(); j++) {
-                for (int k = 0; k < tmp._vectors[0].Get_size(); k++) {
+            for (int j = 0; j < tmp._vectors[0].Get_size(); j++) {
+                for (int k = 0; k < _size; k++) {
                     A[i][j] += _vectors[i][k] * tmp._vectors[k][j];
                 }
             }
@@ -77,21 +77,9 @@ public:
         return A;
     }
 
-    Matrix operator/(Matrix matr) const {
-        Matrix A = _vectors * matr.Tranposition();
+    Matrix operator/(Matrix& tmp) const {
+        Matrix A = _vectors * tmp.Obratna_mat();
         return A;
-    }
-
-    
-
-    Matrix Tranposition(){
-        Matrix mat = Matrix (_vectors->Get_size(), _size);
-        for (int i = 0; i < _vectors->Get_size(); i++){
-            for (int j = 0; j < _size; j++){
-                mat[i][j] = _vectors[j][i];
-            }
-        }
-        return mat;
     }
 
     /*T determinant(Matrix matr, size_t n) {
@@ -129,80 +117,51 @@ public:
     return det;
     }*/
 
-    matrix inverse_matrix(){ // 1 метод
-        T det=determinant();
-        if (det==0)
-        throw "inverse matrix doesnt exist";
-        matrix m=matrix(_size, _size);
-        for(size_t i=0;i<_size;i++){
-            for(size_t j=0;j<_size;j++){
-                m[i][j]=new_m(i,j).determinant();
-                if((i+j)%2==1&&m[i][j]!=0)
-                m[i][j]*=-1;
+    Matrix Obratna_mat(){
+        T det = Deter();
+        if (det == 0){
+            throw "error";
+        }
+
+        Matrix A = Matrix(_size, _vectors[0].Get_size());
+
+        if (_size != _vectors[0].Get_size()){
+            throw "error";
+        }
+
+        for(size_t i = 0;i < _size;i++){
+            for(size_t j = 0;j < _vectors[0].Get_size();j++){
+                Matrix minor = Minor(i,j);
+                T minorDet = minor.Deter();
+                T cof;
+                if ((i + j) % 2 == 0){
+                    cof = minorDet;
+                }
+                else{
+                    cof = -minorDet;
+                }
+                A[j][i] = cof / det;
             }
 
         }
-        matrix m1=m.transpose();
-        double x=1.0/det;
-        return m1*x;
+        
+        return A;
 
     }
 
-    matrix<double> reverse_matrix(){ // 2 метод
-        if (this->determinant() == 0){
-            std::cout<<"matrix viragdena"<<std::endl;
-            throw 1;
-        }
-        matrix<double> new_matrix = matrix<double>(_size);
-        for (int i = 0 ; i < _size; i++){
+    Matrix Tranposition(){
+        Matrix A = Matrix (_vectors->Get_size(), _size);
+        for (int i = 0; i < _vectors->Get_size(); i++){
             for (int j = 0; j < _size; j++){
-                matrix dop_matrix = matrix(_size - 1);
-                int rows = 0;
-                for (int k = 0; k < _size; k++){
-                    if (k == j){
-                        continue;
-                    }
-                    int cols = 0;
-                    for (int l = 0; l < _size; l++){
-                        if (l == i){
-                            continue;
-                        }
-                        dop_matrix[rows][cols] = _vectors[k][l];
-                        cols += 1;
-                    }
-                    rows += 1;
-                }
-                new_matrix[i][j] = pow(-1, j + i) * dop_matrix.determinant();
+                A[i][j] = _vectors[j][i];
             }
         }
-        new_matrix = new_matrix / this->determinant();
-        return new_matrix;
-    }
-
-    matrix operator*(const matrix& matr)const{ // перегруз умножения
-        size_t s=_vectors[0].getsize();
-        size_t s1=matr._vectors[0].getsize();
-        if(s!=matr._size)
-        throw "sizes are different";
-        matrix mat=matrix(_size,s1);
-        for(size_t i=0; i<_size; i++){
-            for(size_t j=0; j<s1;j++){
-                for(int k=0; k<_size; k++){
-                int temp = _vectors[i][k]*matr[k][j];
-                mat[i][j] += temp;
-                temp = 0;
-                }
-            
-            }
-
-        }
-        return mat;
+        return A;
     }
 
     T Deter(){
-        if (_size != _vectors->Get_size()){
-            std:: cout << "Matrix: Error input";
-            throw 0;
+        if (_size != _vectors[0].Get_size()){
+            throw "Error";
         }
 
         if (_size == 1){
@@ -211,24 +170,25 @@ public:
 
         else{
             T det = 0;
-            for (int i = 0; i < _vectors->Get_size(); i++){
-                Matrix min = Minor(0, i);
-                det += pow(-1, i) * _vectors[0][i] * min.Deter();
+            for (int i = 0; i < _vectors[0].Get_size(); i++){
+                Matrix mino = Minor(0, i);
+                //std::cout << mino << std::endl;
+                det += pow(-1, i) * _vectors[0][i] * mino.Deter();
             }
             return det;
         }
     }
 
     Matrix Minor(size_t ro, size_t co) const{
-        Matrix res = Matrix (_size - 1, _vectors->Get_size() - 1);
+        Matrix result = Matrix (_size - 1, _vectors[0].Get_size() - 1);
         int row = 0;
         for (int i = 0; i < _size - 1; i++){
             int col = 0;
             if (i == ro){
                 row = 1;
             }
-            for (int j = 0; j < _vectors->Get_size(); j++){
-                if (i == co){
+            for (int j = 0; j < _vectors[0].Get_size(); j++){
+                if (j == co){
                     col = 1;
                 }
                 int kr = i;
@@ -239,10 +199,10 @@ public:
                 if (col != 0){
                     kl = j + 1;
                 }
-                res[i][j] = _vectors[kr][kl];
+                result[i][j] = _vectors[kr][kl];
             }
         }
-        return res;
+        return result;
     }
 
     void RandomFill(Matrix& matr) {
@@ -251,22 +211,19 @@ public:
                 matr._vectors[i][j] = j + i;
             }
         }*/
-        matr._vectors[0][0] = 1;
-        matr._vectors[0][1] = 2;
-        matr._vectors[0][2] = 3;
-        matr._vectors[0][3] = 4;
-        matr._vectors[1][0] = 5;
-        matr._vectors[1][1] = 6;
-        matr._vectors[1][2] = 7;
-        matr._vectors[1][3] = 8;
-        matr._vectors[2][0] = 9;
-        matr._vectors[2][1] = 1;
-        matr._vectors[2][2] = 2;
-        matr._vectors[2][3] = 3;
-        matr._vectors[3][0] = 4;
-        matr._vectors[3][1] = 5;
-        matr._vectors[3][2] = 6;
-        matr._vectors[3][3] = 5;
+    }
+
+    Matrix& operator=(const Matrix& matr){
+        if (_size != matr._size || _vectors[0].Get_size() != matr._vectors[0].Get_size()){
+            throw "Error";
+        }
+        _size = matr._size;
+        for (int i = 0; i < _size; i++){
+            for (int j = 0; j < _vectors[0].Get_size(); j++){
+                _vectors[i][j] = matr._vectors[i][j];
+            }
+        }
+        return *this;
     }
 
     ~Matrix (){

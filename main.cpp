@@ -40,17 +40,39 @@ int main(){
     std:: cin >> size;*/
 
 
-    Vector<double> vec1 = {1,3,4,6};
+    Vector<double> vec1 = {1,3,5};
+    Vector<double> vec2 = {1,3,5};
     
-    Matrix<double> matr = Matrix<double> (4, 4);
+    Matrix<double> matr1 = Matrix<double> (3, 3);
+    Matrix<double> matr2 = Matrix<double> (3, 3);
 
-    matr.RandomFill(matr);
+    matr1[0][0] = 7;
+    matr1[0][1] = 8;
+    matr1[0][2] = 5;
+    matr1[1][0] = 6;
+    matr1[1][1] = 0;
+    matr1[1][2] = 5;
+    matr1[2][0] = 1;
+    matr1[2][1] = 4;
+    matr1[2][2] = 2.5;
 
-    std:: cout << matr << std:: endl;
+    matr2 = matr1;
+
+    std:: cout << matr1.Obratna_mat() << std:: endl;
+
+    std:: cout << matr2 << std:: endl;
+
+    Matrix<double> matr3 = matr1.Obratna_mat() * matr2;
+
+    std:: cout << matr3 << std:: endl;
+
+    /*std:: cout << matr1 << std:: endl;
 
     std:: cout << "determinant: \n" << matr.Deter() << std:: endl;
 
-    std:: cout << matr.Tranposition() << std:: endl;
+    std:: cout << "Obratn matrix: \n" << matr.Obratna_mat() << std:: endl;
+
+    std:: cout << matr.Tranposition() << std:: endl;*/
 
     return 0;
 }

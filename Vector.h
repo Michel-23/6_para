@@ -5,13 +5,13 @@ template /*для абстрактного типа данных*/<typename /*т
 class Vector{
 private:
     T* _array;
-    double* _norm;
+    //double* _norm;
     size_t _size;
 public:
     Vector(){
         _size = 10; 
         _array = new T[_size];
-        _norm = new double [_size];
+        //_norm = new double [_size];
     }
     Vector(size_t size, T* array) { // просто конструктор
         _size = size;
@@ -19,7 +19,7 @@ public:
         for (int i = 0; i < _size; i++){
             _array[i] = array[i];
         }
-        _norm = new double [_size];
+        //_norm = new double [_size];
     }
 
     size_t Get_size(){
@@ -29,7 +29,7 @@ public:
     Vector (const Vector& tmp){ // конструктор копирования
         _size = tmp._size;
         _array = new T[_size];
-        _norm = new double [_size];
+        //_norm = new double [_size];
         for (int i = 0; i < _size; i++){
             _array[i] = tmp._array[i];
         }
@@ -44,13 +44,13 @@ public:
         return leng;
     }
 
-    Vector normaliz (){
+    /*Vector normaliz (){
         double len = this->Lengg();
         for (int i = 0; i < _size; i++){
             _norm[i] = _array[i] / len;
         }
         return Vector (_size, _norm);
-    }
+    }*/
 
     Vector(size_t size): _size(size){ // присваивание значений полям класса - инициализирующий список
     _array = new T[size];
@@ -94,7 +94,7 @@ public:
     Vector(std:: initializer_list<T> list){ // конструктор принимающий список инициализации list=список
         _size = list.size();
         _array = new T[_size];
-        _norm = new double [_size];
+        //_norm = new double [_size];
         int i = 0;
         for (auto elem = list.begin(); elem != list.end(); elem ++, i++){
             _array[i] = *elem;
@@ -103,7 +103,7 @@ public:
 
     ~Vector(){
         delete [] _array;
-        delete [] _norm;
+        //delete [] _norm;
     }
 
     Vector& operator=(const Vector& tmp){ // !!!
